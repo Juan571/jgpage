@@ -1,0 +1,113 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- The big featured header, it uses blog cover image as a BG if available --}}
+<header class="site-header outer {{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}">
+
+</header>
+
+{{!-- The main content area --}}
+<main id="site-main" class="site-main outer">
+  <nav class="nav1" id=home>
+    <div class="container">
+
+      <div style="text-align: right;padding-top: 4px;">
+        <ul class="social-network social-circle social-circlenav ">
+          <li><a href="#" class="icoFacebookNav" title="Phone"><i class="fas fa-mobile-alt"></i></a></li>
+          <li><p href="https://api.whatsapp.com/send?phone=56990889033 " class="txt-white" title="Phone">+56 9 90889033</p></li>
+          <li><a href="#" class="icoFacebookNav" title="Mail"><i class="far fa-envelope"></i></a></li>
+          <li><p href="#" class="txt-white" title="Mail">jorge@tooldata.io</p></li>
+          <li><p href="#" class="txt-white">|</p></li>
+        </ul>
+        <ul class="social-network social-networknav social-circle social-circlenav ">
+          <li><a href="#" class="icoFacebookNav" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#" class="icoTwitterNav" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#" class="icoInstagramNav" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#" class="icoLinkedinNav" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="">
+    <nav class="navbar navbar-expand-lg justify-content-between navbar-dark bg-dark" style="background-color:#334f5b !important;padding-bottom: 1%;" role="navigation">
+      <div class="container">
+        <a href="/" class="navbar-brand">
+          <img class="card-img-top" src="assets/jg.png" alt="" style="">
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a  data-scroll class="nav-link" href="#about">Acerca de Jorge</a>
+            </li>
+            <li class="nav-item">
+              <a data-scroll class="nav-link" href="#contact">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <section id=carousel>
+    <div class="w3-content w3-display-container" style="max-width:100%">
+      <img class="mySlides" src="assets/carousel1.jpg" style="width:100%">
+      <img class="mySlides" src="assets/carousel2.jpg" style="width:100%">
+      <img class="mySlides" src="assets/carousel3.jpg" style="width:100%">
+      <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+        <div class="w3-left w3-hover-text-khaki" id="plusDivsPrev">&#10094;</div>
+        <div class="w3-right w3-hover-text-khaki" id="plusDivsNext">&#10095;</div>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white"></span>
+      </div>
+    </div>
+  </section>
+  <section style="background-color: #f4f4f4;">
+    <div class="container" style="padding-top: 1px;padding-bottom: 10px;">
+      <div class="col-sm-12 my-12" style="text-align: center;margin-top: 30px;">
+        <h2 class="htittles"> Entradas</h2>
+        <hr class="hrseparator">
+
+        <div class="row">
+              {{#foreach posts limit="6"}}
+                  {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                  {{> "post-card"}}
+
+              {{/foreach}}
+        </div>
+        <!-- ol class="carousel-indicators carousel-indicators-numbers" style="width: 70%;margin-top: 45px;margin-bottom: 15px;position: relative;">
+          <li data-target="" data-slide-to="0" class="active"></li>
+          <li data-target="l" data-slide-to="1"></li>
+          <li data-target="" data-slide-to="2"></li>
+        </ol -->
+        
+        <div class=" divbtnsposts col-md-12">
+            <button id="antposts" type="" class="btntool"> << ANTERIOR </button>
+            <button id="sigposts" type="" class="btntool">SIGUIENTE >> </button>
+          </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>

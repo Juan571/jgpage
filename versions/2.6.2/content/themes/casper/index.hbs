@@ -89,11 +89,13 @@ into the {body} of the default.hbs template --}}
         <hr class="hrseparator">
 
         <div class="row">
-              {{#foreach posts limit="6"}}
-                  {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                  {{> "post-card"}}
+          {{#get "posts" limit=6 }}
+            {{#foreach posts}}
+              {{> "post-card"}}
+            {{/foreach}}
+            {{pagination}}
+          {{/get}}
 
-              {{/foreach}}
         </div>
         <!-- ol class="carousel-indicators carousel-indicators-numbers" style="width: 70%;margin-top: 45px;margin-bottom: 15px;position: relative;">
           <li data-target="" data-slide-to="0" class="active"></li>

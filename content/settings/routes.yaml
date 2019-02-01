@@ -1,11 +1,16 @@
+hice esto :
+
 routes:
+ /:
+   template:
+     - index
 
 collections:
-  /:
-    permalink: /{slug}/
-    template:
-      - index
+ /blog/:
+   permalink: /blog/{slug}/
+   template:
+     - blog
 
 taxonomies:
-  tag: /tag/{slug}/
-  author: /author/{slug}/
+ tag: /tag/{slug}/
+ author: /author/{slug}/
